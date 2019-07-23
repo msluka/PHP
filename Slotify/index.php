@@ -10,40 +10,68 @@
 
         header("Location: register.php");
 
-    }
+    } 
 
+
+    //
     
+    $t = date("H:m:s Y-m-t");
 
+    if ($t < "20") {
+        echo "Have a good day! ".$t;
+    } else {
+        echo "Have a good night! ".$t;
+    }
+    
 
 ?>
 
 <!doctype html>
 
-<head></head>
+<head>
+    <title>Welcome to Slotify</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
 
 <body>
 
-    <?php
-        
-        $t = date("H:m:s Y-m-t");
+    <div id="nowPlayingBarContainer">
+        <div id="nowPlayingBar">
+            <div id="nowPlayingLeft"></div>
+            <div id="nowPlayingCenter">
+                <div class="content playerControlls">
+                    <div class="buttons">
 
-        if ($t < "20") {
-            echo "Have a good day! ".$t;
-        } else {
-            echo "Have a good night! ".$t;
-        }
+                        <button class="controllButton shuffle" title="Shuffle button">
+                            <img src="assets/images/icons/shuffle.png" alt="Shuffle">
+                        </button>
 
-    ?>
+                        <button class="controllButton previous" title="Previous button">
+                            <img src="assets/images/icons/previous.png" alt="Previous">
+                        </button>
 
+                        <button class="controllButton play" title="Play button">
+                            <img src="assets/images/icons/play.png" alt="Play">
+                        </button>
 
-    <div>This is me - MSLUKA</div>
-    <table>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+                        <button class="controllButton pause" title="Pause button" style="display:none">
+                            <img src="assets/images/icons/pause.png" alt="Pause">
+                        </button>
+
+                        <button class="controllButton next" title="Next button">
+                            <img src="assets/images/icons/next.png" alt="Next">
+                        </button>
+
+                        <button class="controllButton repeat" title="Repeat button">
+                            <img src="assets/images/icons/repeat.png" alt="Repeat">
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <div id="nowPlayingright"></div>
+        </div>
+    </div>
 
 </body>
 
